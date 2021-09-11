@@ -1,9 +1,15 @@
 import { width } from 'dom-helpers';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import logo from '../../images/LeaugeLogo/image1.png'
 import male from '../../images/Photo/male.png'
 import female from '../../images/Photo/female.png'
+import twitter from '../../images/Icon/Twitter.png'
+import facebook from '../../images/Icon/Facebook.png'
+import youtube from '../../images/Icon/YouTube.png';
+
+const size ={
+    width: '65px'
+}
 const LeagueDetails = () => {
     const {leagueId}= useParams();
     const [league,setLeague]=useState([]);
@@ -22,7 +28,7 @@ const LeagueDetails = () => {
             backgroundRepeat: 'no-repeat' ,
             opacity: 0.5}}>
                 <h4 className="align-self-center d-block m-auto">
-                <img src={logo} style={{width: '100px', }} alt="" />
+                <img src={league.strLogo} style={{width: '100px', }} alt="" />
                 </h4>
             </div>
 
@@ -89,6 +95,11 @@ const LeagueDetails = () => {
             <small>
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
             </small>
+            </div>
+            <div className="d-flex justify-content-center mt-5" >
+            <a href="https://twitter.com/MdSanto93652120" target="_blank"><img src={twitter} style={size}   alt="" /></a>
+            <a href="https://www.facebook.com/profile.php?id=100009210365420" target="_blank"><img src={facebook} style={size}   alt="" /></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src={youtube} style={size}   alt="" /></a>
             </div>
        </div>
     );
